@@ -76,7 +76,6 @@ export default function UserCompany({ user }: UserCompanyTypes) {
               <LabelInputContainer className="mb-4 mt-4">
                 <Label htmlFor="category">Company</Label>
                 <Input
-                  // value={company?.company}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     setCompany({ company: e.target.value })
                   }

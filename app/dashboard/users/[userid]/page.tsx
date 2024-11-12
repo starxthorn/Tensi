@@ -10,7 +10,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { CustomerType, UserType } from "@/lib/type";
-import { fetchCustomers, fetchUserData } from "@/lib/action";
+import {
+  fetchCustomers,
+  fetchUserData,
+  filterAndDeleteCustomers,
+} from "@/lib/action";
 import Link from "next/link";
 import Button from "@/components/ReusableComponents/Button";
 import {
@@ -83,7 +87,7 @@ export default async function Page({ params, searchParams }: PropsTypes) {
     );
   });
 
-  console.log(filteredCustomers);
+  await filterAndDeleteCustomers(params.userid);
 
   return (
     <DashboardWrapperManager>
